@@ -1,0 +1,88 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: "static/img" # Folder where user uploaded files should go
+public_folder: "img"
+collections:
+  - name: "experiences" # Used in routes, e.g., /admin/collections/post
+    label: "Bespoke Experiences" # Used in the UI
+    folder: "content/experiences" # The path to the folder where the documents are stored
+    path: "{{slug}}/index"
+    media_folder: "" # Save images in the post's own folder instead of the static folder
+    public_folder: ""
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields for each document, usually in front matter
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Images", name: "image", widget: "image", allow_multiple: true}
+      - { label: "Season", name: "season", widget: "string" }
+      - { label: "Experience Type", name: "type", select: "string", options: ["Spring", "Summer", "Autumn", "Winter"], multiple: true}
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "content/_index.md"
+        label: "Home Page"
+        name: "home"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - {
+              label: "Residence Section",
+              name: "residence_section",
+              widget: "object",
+              fields:
+                [
+                  { label: "Heading", name: "heading", widget: string },
+                  { label: "Sub-Heading", name: "sum_heading", widget: string },
+                  { label: "Text", name: "text", widget: "text" },
+                  { label: "Quote", name: "quote", widget: "text" },
+                  { label: "Call To Action", name: "cta", widget: "text" },
+                ],
+            }
+          - {
+              label: "Stays Section",
+              name: "stays_section",
+              widget: "object",
+              fields:
+                [
+                  { label: "Heading", name: "heading", widget: string },
+                  { label: "Sub-Heading", name: "sum_heading", widget: string },
+                  { label: "Text", name: "text", widget: "text" },
+                  { label: "Quote", name: "quote", widget: "text" },
+                  { label: "Call To Action", name: "cta", widget: "text" },
+                ],
+            }
+          - {
+              label: "Experiences Section",
+              name: "experiences_section",
+              widget: "object",
+              fields:
+                [
+                  { label: "Heading", name: "heading", widget: string },
+                  { label: "Sub-Heading", name: "sum_heading", widget: string },
+                  { label: "Text", name: "text", widget: "text" },
+                  { label: "Quote", name: "quote", widget: "text" },
+                  { label: "Call To Action", name: "cta", widget: "text" },
+                ],
+            }
+          - {
+              label: "About Section",
+              name: "about_section",
+              widget: "object",
+              fields:
+                [
+                  { label: "Heading", name: "heading", widget: string },
+                  { label: "Sub-Heading", name: "sum_heading", widget: string },
+                  { label: "Text", name: "text", widget: "text" },
+                  { label: "About Jacqui", name: "about_jacqui", widget: "text" },
+                  { label: "Jacqui Image", name: "jacqui_image", widget: "image" },
+                  { label: "Team Image", name: "team_image", widget: "image" },
+                  { label: "Awards", name: "awards", widget: "image", allow_multiple: true},
+                  { label: "Call To Action", name: "cta", widget: "text" },
+                ],
+            }
+      - file: "content/about/index.md"
+        label: "About"
+        name: "about"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "text" }
