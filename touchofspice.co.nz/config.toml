@@ -1,3 +1,10 @@
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
+
+[menu]
+  [[menu.main]]
+    identifier = "experiences"
+    name = "Experiences"
+    url = "/experiences"
+    weight = 10
