@@ -10,8 +10,9 @@ This website runs based on the Hugo framework and is intended to be deployed and
 - Node & NPM
 - Git
 
-# Setting Started
+# Getting Started
 Use the deploy button to get your own copy of the repository.
+
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Art-Science-NZ/touchofspice.co.nz&stack=cms)
 
 This will setup everything needed for running the CMS:
